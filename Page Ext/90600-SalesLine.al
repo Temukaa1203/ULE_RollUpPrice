@@ -53,12 +53,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                     salesprice.SetRange("Source type", priceSalesType);
                                                     salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                     if salesprice.FindSet() then begin
-                                                        // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                        if salesprice."Starting Date" < orderdate then begin
-                                                            if orderdate < salesprice."Ending Date" then begin
+                                                        repeat
+                                                            // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                            if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             end;
-                                                        end;
+                                                        until salesprice.Next() = 0;
                                                     end;
                                                 end
                                                 else begin
@@ -67,11 +67,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                     salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                     if salesprice.FindSet() then begin
                                                         // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                        if salesprice."Starting Date" < orderdate then begin
-                                                            if orderdate < salesprice."Ending Date" then begin
+                                                        repeat
+                                                            // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                            if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             end;
-                                                        end;
+                                                        until salesprice.Next() = 0;
                                                     end;
                                                 end;
 
@@ -85,11 +86,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                 salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                 if salesprice.FindSet() then begin
                                                     // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                    if salesprice."Starting Date" < orderdate then begin
-                                                        if orderdate < salesprice."Ending Date" then begin
+                                                    repeat
+                                                        // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                        if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                             TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                         end;
-                                                    end;
+                                                    until salesprice.Next() = 0;
                                                 end;
 
                                             end;
@@ -146,11 +148,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                     salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                     if salesprice.FindSet() then begin
                                                         // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                        if salesprice."Starting Date" < orderdate then begin
-                                                            if orderdate < salesprice."Ending Date" then begin
+                                                        repeat
+                                                            // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                            if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             end;
-                                                        end;
+                                                        until salesprice.Next() = 0;
                                                     end;
                                                 end
                                                 else begin
@@ -159,11 +162,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                     salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                     if salesprice.FindSet() then begin
                                                         // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                        if salesprice."Starting Date" < orderdate then begin
-                                                            if orderdate < salesprice."Ending Date" then begin
+                                                        repeat
+                                                            // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                            if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             end;
-                                                        end;
+                                                        until salesprice.Next() = 0;
                                                     end;
                                                 end;
 
@@ -177,11 +181,12 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                 salesprice.SetRange("Product No.", AssemblyLine."No.");
                                                 if salesprice.FindSet() then begin
                                                     // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                    if salesprice."Starting Date" < orderdate then begin
-                                                        if orderdate < salesprice."Ending Date" then begin
+                                                    repeat
+                                                        // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                        if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                             TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                         end;
-                                                    end;
+                                                    until salesprice.Next() = 0;
                                                 end;
 
                                             end;
