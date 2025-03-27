@@ -57,8 +57,8 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                             // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                                AssemblyLine.validate("Unit Price Actual", AssemblyLine.Quantity * salesprice."Unit Price");
-                                                                Message(Format(AssemblyLine."No."));
+                                                                AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
+
                                                                 AssemblyLine.Modify(true);
                                                             end;
                                                         until salesprice.Next() = 0;
@@ -74,8 +74,8 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                             // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                                AssemblyLine.validate("Unit Price Actual", AssemblyLine.Quantity * salesprice."Unit Price");
-                                                                Message(Format(AssemblyLine."No."));
+                                                                AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
+
                                                                 AssemblyLine.Modify(true);
                                                             end;
                                                         until salesprice.Next() = 0;
@@ -96,8 +96,7 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                         // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                         if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                             TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
-                                                            AssemblyLine.validate("Unit Price Actual", AssemblyLine.Quantity * salesprice."Unit Price");
-                                                            Message(Format(AssemblyLine."No."));
+                                                            AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
                                                             AssemblyLine.Modify(true);
                                                         end;
                                                     until salesprice.Next() = 0;
@@ -162,6 +161,8 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                             // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                                AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
+                                                                AssemblyLine.Modify(true);
                                                             end;
                                                         until salesprice.Next() = 0;
                                                     end;
@@ -176,6 +177,8 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                             // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                             if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                                 TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                                AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
+                                                                AssemblyLine.Modify(true);
                                                             end;
                                                         until salesprice.Next() = 0;
                                                     end;
@@ -195,12 +198,13 @@ pageextension 90600 SalesLineAssOrd extends "Sales Order Subform"
                                                         // TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
                                                         if ((salesprice."Starting Date" < orderdate) and (orderdate < salesprice."Ending Date")) or ((salesprice."Starting Date" = 0D) and (salesprice."ending date" = 0D)) or ((salesprice."Starting Date" < orderdate) and (salesprice."Ending Date" = 0D)) then begin
                                                             TotalAmount += AssemblyLine.Quantity * salesprice."Unit Price";
+                                                            AssemblyLine.validate("Unit Price Actual", salesprice."Unit Price");
+                                                            AssemblyLine.Modify(true);
                                                         end;
                                                     until salesprice.Next() = 0;
                                                 end;
 
                                             end;
-                                            AssemblyLine."Unit Price Actual" := AssemblyLine.Quantity * salesprice."Unit Price";
                                         until AssemblyLine.Next() = 0;
                                     SalesLine.Validate("Unit Price", TotalAmount);
                                     SalesLine.Modify(true);

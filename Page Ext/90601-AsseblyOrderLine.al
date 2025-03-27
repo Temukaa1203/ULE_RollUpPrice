@@ -8,6 +8,7 @@ pageextension 90601 AssemblyOrder extends "Assembly Order Subform"
             {
                 ApplicationArea = all;
                 Caption = 'Unit Price Actual';
+                Editable = false;
             }
         }
 

@@ -1,4 +1,4 @@
-pageextension 90602 PostedAssemblyOrder extends "Posted Assembly Order Subform"
+pageextension 90603 assembletoorderlines extends "Assemble-to-Order Lines"
 {
     layout
     {
@@ -6,13 +6,11 @@ pageextension 90602 PostedAssemblyOrder extends "Posted Assembly Order Subform"
         {
             field("Unit Price Actual"; Rec."Unit Price Actual")
             {
-                ApplicationArea = all;
+                ApplicationArea = All;
                 Caption = 'Unit Price Actual';
                 Editable = false;
             }
         }
-
-
     }
 
     actions
